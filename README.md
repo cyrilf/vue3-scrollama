@@ -1,4 +1,5 @@
 # Vue3 Scrollama
+## Currently Under Investigation - Not Working.
 
 <p align="center">
     <a href="https://vuejs.org" target="_blank" rel="noopener noreferrer">
