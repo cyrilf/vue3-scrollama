@@ -5,6 +5,9 @@
   "license": "MIT",
   "private": false,
   "description": "A Vue 3 wrapper for Scrollama",
+  "unpkg": "./dist/vue3-scrollama.min.js",
+  "main": "./dist/vue3-scrollama.umd.js",
+  "module": "./dist/vue3-scrollama.esm.js",
   "author": "George (devarteneur) Dimitrakopoulos <hello@georgedimitrakopoulos.com>",
   "keywords": [
     "vue3",
