@@ -20,3 +20,10 @@ npm install vue3-scrollama intersection-observer
 
 Scrollama uses [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), we must manually add the polyfill for cross-browser support. 
 
+## More Documentation Coming soon.
+
+Any html element added within the ScroLlama component will be treated as a step. Events will start triggering and emmiting as the user scrolls.
+
+You may use the step-enter, step-progress and step-exit events.
+
+More documentation will be added in the coming days. Thank you for your patience.
