@@ -65,13 +65,8 @@ import VueScrollama from "vue3-scrollama";
 | --- | --- | --- | --- |
 | debug | `Bool` | `false` | Displays a debug line that shows where Scrollama cursor is. |
 | offset | `Float` | `0` | Offsets the Scrollama step cursor by X. |
-| @step-enter | `Event` | `` | Fires when entering the Scrollama component. |
-| @step-progress | `Event` | `` | `` | Fires every time you scroll within the Scrollama component. |
-| @step-exit | `Event` | `` | `` |Fires when you exit the Scrollama component. |
-## More Documentation Coming soon.
+| @step-enter | `Event` | `-` | Fires when entering the Scrollama component. |
+| @step-progress | `Event` | `-` | Fires every time you scroll within the Scrollama component. |
+| @step-exit | `Event` | `-` | Fires when you exit the Scrollama component. |
 
-Any html element added within the ScroLlama component will be treated as a step. Events will start triggering and emmiting as the user scrolls.
-
-You may use the step-enter, step-progress and step-exit events.
-
-More documentation will be added in the coming days. Thank you for your patience.
+### More Documentation Coming soon. Thank you for your patience.
