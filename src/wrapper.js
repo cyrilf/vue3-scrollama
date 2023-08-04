@@ -1,8 +1,8 @@
 /* eslint-disable */
-import ScroLlama from './components/ScroLlama.vue';
+import VueScrollama from './components/VueScrollama.vue';
 
-export { ScroLlama };
+export { VueScrollama };
 
 export default function install(Vue) {
-  Vue.component('ScroLlama', ScroLlama);
+  Vue.component('VueScrollama', VueScrollama);
 }

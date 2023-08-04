@@ -1,3 +1,3 @@
-import ScroLlama from "./components/ScroLlama.vue";
+import VueScrollama from "./components/VueScrollama.vue";
 
-export default ScroLlama;
+export default VueScrollama;
