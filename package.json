@@ -11,6 +11,10 @@
     "scrollytelling",
     "scrollama"
   ],
+  "files": [
+    "dist",
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/devarteneur/vue3-scrollama.git"
