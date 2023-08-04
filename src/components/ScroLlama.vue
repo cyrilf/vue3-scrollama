@@ -7,7 +7,6 @@
 <script setup>
 /* eslint-disable */
 import { ref, onMounted, onBeforeUnmount, watchEffect } from 'vue';
-import { defineProps, defineEmits } from 'vue';
 import scrollama from 'scrollama';
 
 const props = defineProps();
