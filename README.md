@@ -1,5 +1,4 @@
 # Vue3 Scrollama
-## Currently Under Investigation - Not Working.
 
 <p align="center">
     <a href="https://vuejs.org" target="_blank" rel="noopener noreferrer">
@@ -21,6 +20,54 @@ npm install vue3-scrollama intersection-observer
 
 Scrollama uses [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), we must manually add the polyfill for cross-browser support. 
 
+## Usage
+
+Import the component locally in your component:
+
+```vue
+import VueScrollama from "vue3-scrollama";
+```
+
+## Basic Example
+```vue
+<template>
+    <div>
+        <VueScrollama
+            :debug="false"
+            :offset="0.55"
+            @step-enter="({ element }) => (currStep = element.dataset.stepNo)"
+            class="main__scrollama"
+        >
+            <div class="step" data-step-no="1">
+                Step 1
+            </div>
+            <div class="step" data-step-no="2">
+                Step 2
+            </div>
+           <div class="step" data-step-no="3">
+                Step 3
+            </div>
+        </VueScrollama>
+        <div>{{currStep}}</div>
+    </div>
+</template>
+```
+
+```vue
+<script setup>
+    import VueScrollama from 'vue3-scrollama'
+    let currStep = ref(null);
+</script>
+```
+
+## Props
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| debug | `Bool` | `false` | Displays a debug line that shows where Scrollama cursor is. |
+| offset | `Float` | `0` | Offsets the Scrollama step cursor by X. |
+| @step-enter | `Event` | `` | Fires when entering the Scrollama component. |
+| @step-progress | `Event` | `` | `` | Fires every time you scroll within the Scrollama component. |
+| @step-exit | `Event` | `` | `` |Fires when you exit the Scrollama component. |
 ## More Documentation Coming soon.
 
 Any html element added within the ScroLlama component will be treated as a step. Events will start triggering and emmiting as the user scrolls.
