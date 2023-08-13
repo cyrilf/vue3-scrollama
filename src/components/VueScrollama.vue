@@ -6,18 +6,48 @@
 
 <script setup>
 /* eslint-disable */
-import { ref, onMounted, onBeforeUnmount, watchEffect } from 'vue';
-import scrollama from 'scrollama';
+// import { ref, onMounted, onBeforeUnmount, watchEffect } from 'vue';
+import scrollama from "scrollama";
 
-const props = defineProps();
+const props = defineProps({
+  offset: {
+    type: [Number, String],
+    required: false,
+    default: () => 0.5,
+  },
+  progress: {
+    type: Boolean,
+    required: false,
+    default: () => false,
+  },
+  threshold: {
+    type: Number,
+    required: false,
+    default: () => 4,
+  },
+  once: {
+    type: Boolean,
+    required: false,
+    default: () => false,
+  },
+  debug: {
+    type: Boolean,
+    required: false,
+    default: () => false,
+  },
+});
+
 const emit = defineEmits();
 
 let rootElement = ref(null);
 const _scroller = ref(null);
-const attrs = new Proxy({}, { 
-  get: (_, prop) => rootElement.value.getAttribute(prop),
-  has: (_, prop) => rootElement.value.hasAttribute(prop),
-});
+const attrs = new Proxy(
+  {},
+  {
+    get: (_, prop) => rootElement.value.getAttribute(prop),
+    has: (_, prop) => rootElement.value.hasAttribute(prop),
+  }
+);
 
 onMounted(() => {
   _scroller.value = scrollama();
@@ -28,7 +58,7 @@ onBeforeUnmount(() => {
   if (_scroller.value) {
     _scroller.value.destroy();
   }
-  window.removeEventListener('resize', handleResize);
+  window.removeEventListener("resize", handleResize);
 });
 
 watchEffect(() => {
@@ -40,25 +70,26 @@ function setup() {
     _scroller.value.destroy();
   }
 
-  if(rootElement.value) {
+  if (rootElement.value) {
     const opts = {
       step: Array.from(rootElement.value.children),
-      progress: 'step-progress' in attrs,
+      progress: "step-progress" in attrs,
       ...attrs,
     };
 
-    _scroller.value = scrollama().setup(opts)
-      .onStepProgress(resp => {
-        emit('step-progress', resp);
+    _scroller.value = scrollama()
+      .setup(opts)
+      .onStepProgress((resp) => {
+        emit("step-progress", resp);
       })
-      .onStepEnter(resp => {
-        emit('step-enter', resp);
+      .onStepEnter((resp) => {
+        emit("step-enter", resp);
       })
-      .onStepExit(resp => {
-        emit('step-exit', resp);
+      .onStepExit((resp) => {
+        emit("step-exit", resp);
       });
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
   }
 }
 
