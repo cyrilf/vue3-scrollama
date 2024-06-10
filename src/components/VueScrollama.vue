@@ -74,6 +74,7 @@ function setup() {
     const opts = {
       step: Array.from(rootElement.value.children),
       progress: "step-progress" in attrs,
+      debug: props.debug,
       ...attrs,
     };
 
